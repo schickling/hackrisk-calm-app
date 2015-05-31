@@ -9,22 +9,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalmViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewDidAppear(animated: Bool)
     {
         HealthKit().startPollData()
-//        
-//        var localNotification: UILocalNotification = UILocalNotification()
-//        localNotification.alertAction = "Testing notifications on iOS8"
-//        localNotification.alertBody = "Woww it works!!"
-//        localNotification.fireDate = NSDate(timeIntervalSinceNow: 10)
-//        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        
+        var localNotification: UILocalNotification = UILocalNotification()
+        localNotification.alertAction = "Testing notifications on iOS8"
+        localNotification.alertBody = "Woww it works!!"
+        localNotification.fireDate = NSDate(timeIntervalSinceNow: 10)
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
     
     override func didReceiveMemoryWarning() {

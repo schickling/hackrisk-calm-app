@@ -28,21 +28,23 @@
                     <items>
                         <label alignment="center" text="Alert Label" id="IdU-wH-bcW"/>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf">
+                        <color key="sashColor" red="0.46675170151222056" green="0.74483692624777187" blue="0.51507400900473743" alpha="1" colorSpace="calibratedRGB"/>
+                    </notificationCategory>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
-                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="4M7-Lo-lvg" kind="relationship" relationship="dynamicNotificationInterface" id="CaW-8B-Mdw"/>
                     </connections>
                 </notificationController>
             </objects>
             <point key="canvasLocation" x="220" y="643"/>
         </scene>
-        <!--Notification Controller-->
-        <scene sceneID="ZPc-GJ-vnh">
+        <!--Dynamic Notification Interface Controller-->
+        <scene sceneID="9jJ-UX-Wjj">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Calm_WatchKit_App" customModuleProvider="target"/>
+                <controller id="4M7-Lo-lvg"/>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="520" y="643"/>
         </scene>
     </scenes>
 </document>

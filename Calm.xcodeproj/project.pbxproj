@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8FD60EB01B1B1C4A00FCC896 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD60EAF1B1B1C4A00FCC896 /* Foundation.framework */; };
+		8FD60EB61B1B211F00FCC896 /* OnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD60EB41B1B211F00FCC896 /* OnboardingContentViewController.swift */; };
+		8FD60EB71B1B211F00FCC896 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD60EB51B1B211F00FCC896 /* OnboardingViewController.swift */; };
 		8FF6C9921B1A891E00495BF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6C9911B1A891E00495BF0 /* AppDelegate.swift */; };
-		8FF6C9941B1A891E00495BF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6C9931B1A891E00495BF0 /* ViewController.swift */; };
+		8FF6C9941B1A891E00495BF0 /* CalmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6C9931B1A891E00495BF0 /* CalmViewController.swift */; };
 		8FF6C9971B1A891E00495BF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FF6C9951B1A891E00495BF0 /* Main.storyboard */; };
 		8FF6C9991B1A891E00495BF0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FF6C9981B1A891E00495BF0 /* Images.xcassets */; };
 		8FF6C99C1B1A891E00495BF0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FF6C99A1B1A891E00495BF0 /* LaunchScreen.xib */; };
@@ -72,10 +74,12 @@
 
 /* Begin PBXFileReference section */
 		8FD60EAF1B1B1C4A00FCC896 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8FD60EB41B1B211F00FCC896 /* OnboardingContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingContentViewController.swift; sourceTree = "<group>"; };
+		8FD60EB51B1B211F00FCC896 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		8FF6C98C1B1A891E00495BF0 /* Calm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF6C9901B1A891E00495BF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FF6C9911B1A891E00495BF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8FF6C9931B1A891E00495BF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8FF6C9931B1A891E00495BF0 /* CalmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmViewController.swift; sourceTree = "<group>"; };
 		8FF6C9961B1A891E00495BF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8FF6C9981B1A891E00495BF0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8FF6C99B1B1A891E00495BF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -144,9 +148,11 @@
 			isa = PBXGroup;
 			children = (
 				8FF6C9DD1B1A8CD900495BF0 /* Calm.entitlements */,
+				8FD60EB41B1B211F00FCC896 /* OnboardingContentViewController.swift */,
+				8FD60EB51B1B211F00FCC896 /* OnboardingViewController.swift */,
 				8FF6C9911B1A891E00495BF0 /* AppDelegate.swift */,
 				8FF6C9D81B1A8A5500495BF0 /* HealthKitHelper.swift */,
-				8FF6C9931B1A891E00495BF0 /* ViewController.swift */,
+				8FF6C9931B1A891E00495BF0 /* CalmViewController.swift */,
 				8FF6C9951B1A891E00495BF0 /* Main.storyboard */,
 				8FF6C9981B1A891E00495BF0 /* Images.xcassets */,
 				8FF6C99A1B1A891E00495BF0 /* LaunchScreen.xib */,
@@ -340,7 +346,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FF6C9941B1A891E00495BF0 /* ViewController.swift in Sources */,
+				8FD60EB61B1B211F00FCC896 /* OnboardingContentViewController.swift in Sources */,
+				8FD60EB71B1B211F00FCC896 /* OnboardingViewController.swift in Sources */,
+				8FF6C9941B1A891E00495BF0 /* CalmViewController.swift in Sources */,
 				8FF6C9D91B1A8A5500495BF0 /* HealthKitHelper.swift in Sources */,
 				8FF6C9921B1A891E00495BF0 /* AppDelegate.swift in Sources */,
 				8FF6C9DB1B1A8A9500495BF0 /* Constants.swift in Sources */,

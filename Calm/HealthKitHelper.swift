@@ -14,43 +14,45 @@ class HealthKit : NSObject
 {
     let motion =  CMMotionManager()
     let storage = HKHealthStore()
+    var authorized = false
     
     override init()
     {
         super.init()
+        
         checkAuthorization()
     }
     
-    func checkAuthorization() -> Bool
+    func checkAuthorization() -> Void
     {
-        // Default to assuming that we're authorized
-        var isEnabled = true
         
         // Do we have access to HealthKit on this device?
         if HKHealthStore.isHealthDataAvailable() {
             // We have to request each data type explicitly
-            let steps = Set([HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate),
-                HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyTemperature),
-                HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodPressureSystolic),
-                HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierRespiratoryRate)])
+            let steps = Set([
+                HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate),
+//                HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyTemperature),
+//                HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodPressureSystolic),
+//                HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierRespiratoryRate)
+                ])
             
             // Now we can request authorization for step count data
             storage.requestAuthorizationToShareTypes(nil, readTypes: steps) { (success, error) -> Void in
-                isEnabled = success
+                self.authorized = success
             }
         } else {
-            isEnabled = false
+            authorized = false
         }
-        
-        return isEnabled
     }
     
     func fetchAll()
     {
-        fetchData(HKQuantityTypeIdentifierHeartRate)
-        fetchData(HKQuantityTypeIdentifierBodyTemperature)
-        fetchData(HKQuantityTypeIdentifierBloodPressureSystolic)
-        fetchData(HKQuantityTypeIdentifierRespiratoryRate)
+        if self.authorized {
+            fetchData(HKQuantityTypeIdentifierHeartRate)
+        }
+        //        fetchData(HKQuantityTypeIdentifierBodyTemperature)
+        //        fetchData(HKQuantityTypeIdentifierBloodPressureSystolic)
+        //        fetchData(HKQuantityTypeIdentifierRespiratoryRate)
     }
     
     func fetchData(identifier: String)

@@ -74,12 +74,12 @@ class InterfaceController: WKInterfaceController {
             
             stress = log(stress * M_E + 1)
 
-            scaling = (stress + scaling) / 2 //Lowpass filter
+            self.scaling = (stress + self.scaling) / 2 // Lowpass filter
 
             let stressLevelWidth: Double = 312 / 2
             let stressLevelHeigth: Double = 280 / 2
-            self.stressLevelImage.setWidth(CGFloat(stressLevelWidth * scaling))
-            self.stressLevelImage.setHeight(CGFloat(stressLevelHeigth * scaling))
+            self.stressLevelImage.setWidth(CGFloat(stressLevelWidth * self.scaling))
+            self.stressLevelImage.setHeight(CGFloat(stressLevelHeigth * self.scaling))
             self.setTitle(heartrateString)
         }
 
