@@ -9,6 +9,7 @@
 import WatchKit
 import Foundation
 import SwiftyJSON
+import Darwin
 
 
 class InterfaceController: WKInterfaceController {
@@ -64,13 +65,18 @@ class InterfaceController: WKInterfaceController {
             stress = stress / 1.5 //Scale stress so full stress does not fill the screen. 
 
             //Constrain stress to some meaningful values. 
-            if stress > 1
+            if stress > 1 {
                 stress = 1
-            else if stress < 0.1
+            } else if stress < 0.1 {
                 stress = 0.1
+            }
+            
+            stress = log(stress * M_E + 1)
 
-            self.stressLevelImage.setWidth(self.screenSize.width * stress)
-            self.stressLevelImage.setHeight(self.screenSize.height * stress)
+            let stressLevelWidth: Double = 312 / 2
+            let stressLevelHeigth: Double = 280 / 2
+            self.stressLevelImage.setWidth(CGFloat(stressLevelWidth * stress))
+            self.stressLevelImage.setHeight(CGFloat(stressLevelHeigth * stress))
             self.setTitle(heartrateString)
         }
 

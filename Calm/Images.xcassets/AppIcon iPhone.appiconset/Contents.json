@@ -3,37 +3,37 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "app_icon_58.png",
+      "filename" : "iphone_icon_120.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "app_icon_55.png",
+      "filename" : "iphone_icon_120-1.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "app_icon_80-1.png",
+      "filename" : "iphone_icon_120-2.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "app_icon_88-1.png",
+      "filename" : "iphone_icon_120-3.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "app_icon_172-1.png",
+      "filename" : "iphone_icon_120-4.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "app_icon_196.png",
+      "filename" : "iphone_icon_120-5.png",
       "scale" : "3x"
     }
   ],
