@@ -20,6 +20,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var stressLevelImage: WKInterfaceImage!
 
     let screenSize = WKInterfaceDevice.currentDevice().screenBounds
+    var scaling:Double = 0.1
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -43,7 +44,7 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: Selector("fetchData"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("fetchData"), userInfo: nil, repeats: true)
     }
     
     override func didDeactivate() {
@@ -73,10 +74,12 @@ class InterfaceController: WKInterfaceController {
             
             stress = log(stress * M_E + 1)
 
+            scaling = (stress + scaling) / 2 //Lowpass filter
+
             let stressLevelWidth: Double = 312 / 2
             let stressLevelHeigth: Double = 280 / 2
-            self.stressLevelImage.setWidth(CGFloat(stressLevelWidth * stress))
-            self.stressLevelImage.setHeight(CGFloat(stressLevelHeigth * stress))
+            self.stressLevelImage.setWidth(CGFloat(stressLevelWidth * scaling))
+            self.stressLevelImage.setHeight(CGFloat(stressLevelHeigth * scaling))
             self.setTitle(heartrateString)
         }
 
