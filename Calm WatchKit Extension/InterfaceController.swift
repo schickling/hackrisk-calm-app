@@ -17,6 +17,8 @@ class InterfaceController: WKInterfaceController {
     
     @IBOutlet weak var exerciseImage: WKInterfaceImage!
     @IBOutlet weak var stressLevelImage: WKInterfaceImage!
+
+    let screenSize = WKInterfaceDevice.currentDevice().screenBounds
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -56,10 +58,19 @@ class InterfaceController: WKInterfaceController {
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
             let json = JSON(data: data)
             let heartrate = json["heartrate"].doubleValue * 60
+            var stress = json["stress"].doubleValue
             let heartrateString: String = String(format:"♡ %1.f", heartrate)
 
-            self.stressLevelImage.setWidth(100)
-            self.stressLevelImage.setHeight(50)
+            stress = stress / 1.5 //Scale stress so full stress does not fill the screen. 
+
+            //Constrain stress to some meaningful values. 
+            if stress > 1
+                stress = 1
+            else if stress < 0.1
+                stress = 0.1
+
+            self.stressLevelImage.setWidth(self.screenSize.width * stress)
+            self.stressLevelImage.setHeight(self.screenSize.height * stress)
             self.setTitle(heartrateString)
         }
 
