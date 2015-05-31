@@ -10,6 +10,8 @@
 		8FD60EB01B1B1C4A00FCC896 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD60EAF1B1B1C4A00FCC896 /* Foundation.framework */; };
 		8FD60EB61B1B211F00FCC896 /* OnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD60EB41B1B211F00FCC896 /* OnboardingContentViewController.swift */; };
 		8FD60EB71B1B211F00FCC896 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD60EB51B1B211F00FCC896 /* OnboardingViewController.swift */; };
+		8FD60EB81B1B3B1100FCC896 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF6C9E01B1A8D3E00495BF0 /* SwiftyJSON.framework */; };
+		8FD60EB91B1B3B1100FCC896 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF6C9E01B1A8D3E00495BF0 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FF6C9921B1A891E00495BF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6C9911B1A891E00495BF0 /* AppDelegate.swift */; };
 		8FF6C9941B1A891E00495BF0 /* CalmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF6C9931B1A891E00495BF0 /* CalmViewController.swift */; };
 		8FF6C9971B1A891E00495BF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FF6C9951B1A891E00495BF0 /* Main.storyboard */; };
@@ -48,6 +50,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		8FD60EBA1B1B3B1200FCC896 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8FD60EB91B1B3B1100FCC896 /* SwiftyJSON.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8FF6C9D71B1A89BE00495BF0 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -107,6 +120,7 @@
 			files = (
 				8FD60EB01B1B1C4A00FCC896 /* Foundation.framework in Frameworks */,
 				8FF6C9DF1B1A8CD900495BF0 /* HealthKit.framework in Frameworks */,
+				8FD60EB81B1B3B1100FCC896 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +232,7 @@
 				8FF6C9891B1A891E00495BF0 /* Frameworks */,
 				8FF6C98A1B1A891E00495BF0 /* Resources */,
 				8FF6C9D71B1A89BE00495BF0 /* Embed App Extensions */,
+				8FD60EBA1B1B3B1200FCC896 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -493,7 +508,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon iPhone";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Calm/Calm.entitlements;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Calm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -504,7 +524,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon iPhone";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Calm/Calm.entitlements;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Calm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

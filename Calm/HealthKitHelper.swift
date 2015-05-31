@@ -98,6 +98,7 @@ class HealthKit : NSObject
         
         storage.executeQuery(query)
     }
+
     
     func executePostRequest(url: NSURL, params: Dictionary<String, Double>) {
         let request = NSMutableURLRequest(URL: url)
@@ -118,9 +119,10 @@ class HealthKit : NSObject
     }
     
     func startPollData() {
-        var timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("fetchAll"), userInfo: nil, repeats: true)
+        // healthkit poll
+        NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: Selector("fetchAll"), userInfo: nil, repeats: true)
         
-        
+        // accel push
         motion.accelerometerUpdateInterval = 0.25
         if motion.accelerometerAvailable == true {
             motion.startAccelerometerUpdatesToQueue(NSOperationQueue.currentQueue(), withHandler:{

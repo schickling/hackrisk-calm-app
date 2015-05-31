@@ -77,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let third: OnboardingContentViewController = OnboardingContentViewController(title: "Calm breathes with you, until you're relaxed.", body: "", image: UIImage(named: "step3"), buttonText: "") {
         }
         
-        let fourth: OnboardingContentViewController = OnboardingContentViewController(title: "Your current heartrate is 75 BPM, so everything is okay.", body: "From now on, you don't have to worry about your stress level anymore.", image: UIImage(named: "step4"), buttonText: "Get started") {
+        let fourth: OnboardingContentViewController = OnboardingContentViewController(title: "Your current heartrate is 98 BPM, take some time to breathe.", body: "From now on, you don't have to worry about your stress level anymore.", image: UIImage(named: "step4"), buttonText: "Get started") {
             self.handleOnboardingCompletion()
         }
         
@@ -116,21 +116,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupNormalRootVC(animated : Bool) {
         // Here I'm just creating a generic view controller to represent the root of my application.
-        var mainVC = CalmViewController()
-        mainVC.title = "Calm"
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var vc: UIViewController = storyboard.instantiateInitialViewController() as! UIViewController
+        
+        self.window?.rootViewController = vc
+        
+//        mainVC.title = "Calm"
         
         // If we want to animate it, animate the transition - in this case we're fading, but you can do it
         // however you want.
-        if animated {
-            UIView.transitionWithView(self.window!, duration: 0.5, options:.TransitionCrossDissolve, animations: { () -> Void in
-                self.window!.rootViewController = mainVC
-                }, completion:nil)
-        }
-            
-            // Otherwise we just want to set the root view controller normally.
-        else {
-            self.window?.rootViewController = mainVC;
-        }
+//        if animated {
+//            UIView.transitionWithView(self.window!, duration: 0.5, options:.TransitionCrossDissolve, animations: { () -> Void in
+//                self.window!.rootViewController = storyboard
+//                }, completion:nil)
+//        }
+//            
+//            // Otherwise we just want to set the root view controller normally.
+//        else {
+//            self.window?.rootViewController = storyboard;
+//        }
     }
 
 

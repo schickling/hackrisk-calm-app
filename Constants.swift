@@ -7,5 +7,5 @@
 //
 
 struct Constants {
-    static var SERVER_IP = "172.16.4.43:8000"
+    static var SERVER_IP = "192.168.43.151:8000"
 }
