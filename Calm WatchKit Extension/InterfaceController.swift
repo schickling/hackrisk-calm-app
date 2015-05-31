@@ -44,7 +44,7 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("fetchData"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("fetchData"), userInfo: nil, repeats: true)
     }
     
     override func didDeactivate() {
