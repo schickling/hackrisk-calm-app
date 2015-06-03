@@ -24,11 +24,11 @@ class CalmViewController: UIViewController {
 //        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("stressFetch"), userInfo: nil, repeats: true)
         
         
-        var localNotification: UILocalNotification = UILocalNotification()
-        localNotification.alertAction = "Time to breath?"
-        localNotification.alertBody = "Time to breath?"
-        localNotification.fireDate = NSDate(timeIntervalSinceNow: 10)
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+//        var localNotification: UILocalNotification = UILocalNotification()
+//        localNotification.alertAction = "Time to breath?"
+//        localNotification.alertBody = "Time to breath?"
+//        localNotification.fireDate = NSDate(timeIntervalSinceNow: 10)
+//        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
     
     override func didReceiveMemoryWarning() {
